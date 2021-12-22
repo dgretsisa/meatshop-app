@@ -1,0 +1,232 @@
+.store {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "s s c c c c c c c c c c";
+}
+
+/** Sidebar **/
+.store .sidebar {
+  grid-area: s;
+  display: grid;
+  grid-template-rows: 80px auto;
+}
+
+.store .sidebar .search {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 25px;
+}
+
+.store .sidebar .search input {
+  width: 100%;
+  font-size: 12px;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+.store .sidebar .filter {
+  padding: 25px;
+  background-color: #dfdfdf;
+}
+
+.store .sidebar .filter label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.store .sidebar .filter select {
+  width: 100%;
+  font-size: 12px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+}
+
+/** Content **/
+.store .content {
+  grid-area: c;
+  z-index: 20;
+}
+
+.store .content .items-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.store .content .item {
+  border: 1px solid #dfdfdf;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.store .content .item-slide {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.store .content .item-slide img {
+  width: 80%;
+  height: 200px;
+  transition: transform 1s ease-in-out;
+}
+
+.store .content .item-slide img:hover {
+  transform: scale(1.2);
+}
+
+.store .content .item .item-name {
+  text-align: center;
+  font-family: var(--font-barlow);
+  font-size: 13px;
+}
+
+.store .content .item .item-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.store .content .item .item-details .available p {
+  font-size: 10px;
+}
+
+.store .content .item .item-details .price {
+  font-size: 13px;
+}
+
+.store .content .item .item-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.store .content .item .item-buttons .plus-icon {
+  width: 30px;
+  height: 30px;
+  color: whitesmoke;
+  background-color: #9c2330;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.store .content .item .item-buttons .plus-icon:hover {
+  background-color: black;
+}
+
+/** Pagination **/
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+}
+
+.pagination .buttons {
+  padding: 6px 15px;
+  color: whitesmoke;
+  background-color: #9c2330;
+  border: 1px whitesmoke solid;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.pagination .buttons:hover {
+  background-color: white;
+  color: #9c2330;
+}
+
+.pagination .buttons.active {
+  background-color: whitesmoke;
+  color: #9c2330;
+  font-weight: bold;
+}
+
+.pagination .prev-icon,
+.pagination .next-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  color: #9c2330;
+}
+
+/** Small Screen **/
+@media screen and (max-width: 768px) {
+  .store {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 90px 150px auto;
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "s s s s s s s s s s s s"
+      "c c c c c c c c c c c c";
+  }
+
+  .store .sidebar {
+    height: 100%;
+    grid-template-rows: 80px 70px;
+  }
+
+  .store .sidebar .search {
+    padding: 0px 30px;
+  }
+
+  .store .sidebar .search input:focus {
+    font-size: 20px !important;
+  }
+
+  .store .sidebar .filter {
+    padding: 10px 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .store .sidebar .filter select {
+    height: 30px;
+    margin-top: 0px;
+  }
+
+  .store .sidebar .filter select:focus {
+    font-size: 20px !important;
+  }
+
+  .store .content .items-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .store .content .item {
+    gap: 15px;
+  }
+
+  .store .content .item .item-name,
+  .store .content .item .item-details .price {
+    font-size: 22px;
+  }
+
+  .store .content .item .item-details .available p {
+    font-size: 14px;
+  }
+
+  .store .content .item .item-buttons .plus-icon {
+    width: 45px;
+    height: 45px;
+  }
+}

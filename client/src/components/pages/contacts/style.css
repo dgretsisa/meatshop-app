@@ -1,0 +1,116 @@
+.contacts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "cc cc cc cc cc cc cc cc cc cc cc cc";
+}
+
+.contacts .content {
+  grid-area: cc;
+  padding: 50px;
+}
+
+.contacts .content .items-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.contacts .content .items-container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contacts .content .items-container .item h5 {
+  font-size: 14px;
+}
+
+.contacts .content .items-container .item p {
+  font-size: 12px;
+  text-align: center;
+}
+
+.contacts .content .items-container .item .icons {
+  width: 30px;
+  height: 30px;
+  color: #9c2330;
+}
+
+.contacts .content .section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  gap: 100px;
+}
+
+.contacts .content .section img {
+  width: 250px;
+  height: 250px;
+}
+
+.contacts .content .section .social-media h5 {
+  font-size: 20px;
+}
+
+.contacts .content .section .social-media .social-links {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 50px;
+  padding: 30px 50px;
+}
+
+.contacts .content .section .social-media .social-links a {
+  font-family: var(--font-sacramento);
+  font-size: 30px;
+  color: whitesmoke;
+  background-color: #9c2330;
+  padding: 2px 30px;
+  border-radius: 100px;
+}
+
+.contacts .content .section .social-media .social-links a:hover {
+  background-color: #af2230;
+}
+
+/** Small Screen **/
+@media screen and (max-width: 768px) {
+  .contacts .content .items-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+  }
+
+  .contacts .content .items-container .item h5 {
+    font-size: 20px;
+  }
+
+  .contacts .content .items-container .item p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .contacts .content .items-container .item .icons {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contacts .content .section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contacts .content .section img {
+    width: 100%;
+  }
+
+  .contacts .content .section .social-media .social-links {
+    flex-direction: column;
+  }
+}

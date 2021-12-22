@@ -1,0 +1,75 @@
+/** Header **/
+.header-common {
+  width: 100%;
+  grid-area: h;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  background-color: black;
+  z-index: 100;
+}
+
+.header-common .left-option {
+  display: inline-flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.header-common .left-option .logo {
+  font-size: 25px;
+  font-family: var(--font-sacramento);
+  color: whitesmoke;
+}
+
+.header-common .left-option .logo:hover {
+  color: #9c2330;
+}
+
+.header-common .right-option {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.header-common .right-option .option a {
+  color: whitesmoke;
+  font-size: 12px;
+}
+
+.header-common .right-option .option a:hover {
+  color: #9c2330;
+}
+
+.header-common .right-option .orders-counter {
+  background-color: #9c2330;
+  padding: 1px 6px;
+  border-radius: 10px;
+  color: white;
+  margin-left: 5px;
+}
+
+.header-common .right-option .menu-icon {
+  width: 40px;
+  height: 40px;
+  color: whitesmoke;
+  cursor: pointer;
+  display: none;
+}
+
+/** Small Screen **/
+@media screen and (max-width: 768px) {
+  .header-common {
+    position: fixed;
+    padding: 10px 30px;
+  }
+
+  .header-common .right-option .option {
+    display: none;
+  }
+
+  .header-common .right-option .menu-icon {
+    display: inline-block;
+  }
+}

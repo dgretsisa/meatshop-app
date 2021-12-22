@@ -1,0 +1,174 @@
+.myorders {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "moc moc moc moc moc moc moc moc moc moc moc moc";
+}
+
+/** Content **/
+.myorders .content {
+  grid-area: moc;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 20px;
+  padding: 50px;
+}
+
+.myorders .content .summary .summary-header {
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.myorders .content .summary .item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 10px solid white;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+.myorders .content .summary .item .left-section {
+  display: flex;
+  gap: 20px;
+}
+
+.myorders .content .summary .item .left-section .icons {
+  width: 20px;
+  height: 20px;
+  color: #c54451;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.myorders .content .summary .item .left-section .icons:hover {
+  color: #9c2330;
+}
+
+.myorders .content .summary .item img {
+  width: 80px;
+  height: 80px;
+}
+
+.myorders .content .summary .item .left-section p {
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.myorders .content .summary .item .left-section p.price {
+  font-size: 12px;
+  color: gray;
+}
+
+.myorders .content .summary .item .right-section {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.myorders .content .summary .item .right-section p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.myorders .content .summary .item .right-section .action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.myorders .content .summary .item .right-section .action .icons {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  background-color: darkgray;
+  color: whitesmoke;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.myorders .content .summary .item .right-section .action .icons:hover {
+  background-color: white;
+  color: black;
+}
+
+.myorders .content .summary .total {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+  padding: 30px 10px;
+  text-transform: uppercase;
+}
+
+.myorders .content .info {
+  padding: 0px 30px;
+}
+
+.myorders .content .info form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.myorders .content .info form h4 {
+  font-weight: normal;
+}
+
+.myorders .content .info form .input-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.myorders .content .info form .input-holder input,
+.myorders .content .info form .input-holder textarea {
+  width: 60%;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 13px;
+  border: 1px solid lightgray;
+}
+
+.myorders .content .info form .input-holder .submit-btn {
+  padding: 10px 25px;
+  background-color: #9c2330;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.myorders .content .info form .input-holder .submit-btn:hover {
+  background-color: #cc0317;
+}
+
+/** Small Screen **/
+@media screen and (max-width: 768px) {
+  .myorders .content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 50px 10px;
+  }
+
+  .myorders .content .summary .total {
+    text-align: right;
+  }
+
+  .myorders .content .info {
+    padding: 0px;
+  }
+
+  .myorders .content .info form .input-holder input:focus,
+  .myorders .content .info form .input-holder textarea:focus {
+    font-size: 20px !important;
+  }
+}
